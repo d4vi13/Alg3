@@ -1,3 +1,4 @@
+#include <string.h>
 #include "consulta.h"
 
 
@@ -6,21 +7,36 @@
  * */
 
 static inline void LerUmaConsulta(FILE* src, char** word, int* dist){
-    char* line = malloc(MAX_WORD_SIZE * 2 * sizeof * word);
+   	 
+	char *space, *line = malloc(MAX_WORD_SIZE * 2 * sizeof * word);
+	if(!line){
+		printf("buffer allocation failed");
+		return;
+	}
+
     *word = malloc(MAX_WORD_SIZE * sizeof **word);
+  	if (!*word){
+		free(line);	
+		printf("buffer allocation failed");
+		return;
+	} 
     
-    if (!word)
-        return NULL;
-    
+    memset(line, 0, 2*MAX_WORD_SIZE * sizeof * word);
     memset(word, 0, MAX_WORD_SIZE * sizeof * word);
     
-    word = fgets(word, MAX_WORD_SIZE, *src);
-    if (!word)
-        return NULL;
+    line = fgets(word, MAX_WORD_SIZE, *src);
+    if (!line)
+        return;
 
-    word[strlen(word) - 1] = '\0';
-    
+	space = strchr(line, ' ');
+	*space = '\0';
+	
+	strcpy(word, line);
+	
+	*dist = atoi(space+1);
 
+	free(line);
+	free(word);
     return  word; 
      
 }
