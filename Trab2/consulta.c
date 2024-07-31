@@ -6,7 +6,7 @@
  *  Ler do src uma linha e retornar a palavra para e distância de edição 
  * */
 
-static inline void LerUmaConsulta(FILE* src, char** word, int* dist){
+void LerUmaConsulta(FILE* src, char** word, int* dist){
    	 
 	char *space, *line = malloc(MAX_WORD_SIZE * 2 * sizeof * word);
 	if(!line){
@@ -62,6 +62,7 @@ static inline void EscreverResultado(FILE* out, char* palavrasDaConsulta, int* V
 
 
 void Consulta(FILE* in, FILE* out, PTRIE_TREE trie, PDICT dict){
+	/*
     int chaves[20], max_dist ,lines = GetLineCount(in);
     char* word;
 
@@ -71,5 +72,5 @@ void Consulta(FILE* in, FILE* out, PTRIE_TREE trie, PDICT dict){
         ProcurarPalavrasComDistN(trie, word, max_dist, chaves);
         EscreverResultado(out, word, chaves);
     }
+	*/
 }
-

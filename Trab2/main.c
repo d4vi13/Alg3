@@ -1,8 +1,10 @@
 #include "common.h"
 #include "dict/dict.h"
 #include "trie/trie.h"
+#include "consulta.h"
+#include <stdio.h>
 
-
+/*
 static inline void MountTrieTree(PDICT dict, PTRIE_TREE tree){
     memset(tree, 0, sizeof * tree);
 
@@ -10,9 +12,10 @@ static inline void MountTrieTree(PDICT dict, PTRIE_TREE tree){
         InsertWord(tree, FetchWord(dict, i), i);
     }
 }
+*/
 
 int main(){
-
+	/*
     DICT dict;
     TRIE_TREE tree;
     FILE* src = fopen("src", "r");
@@ -28,6 +31,17 @@ int main(){
     printf("%s\n", FetchWord(&dict, key));
 
     fclose(src);
-    DismountDict(&dict);
-    return 0;
+    DismountDict(&dict);*/
+
+	FILE* arq = fopen("entrada", "r");
+	char *word;
+	int dist;
+
+	//LerUmaConsulta(arq,&word,&dist);
+
+	printf("%s %d\n", word, dist);
+
+	fclose(arq);
+
+	return 0;
 }

@@ -3,9 +3,12 @@
 
 #include "common.h"
 #include "trie/trie.h"
-#includes "utils.h"
+#include "utils.h"
 
-extern void Consulta(FILE* in, FILE* out, PTRIE_TREE trie, PDICT dict);
+
+void LerUmaConsulta(FILE* src, char** word, int* dist){
+
+//extern void Consulta(FILE* in, FILE* out, PTRIE_TREE trie, PDICT dict);
 
 
 #endif
