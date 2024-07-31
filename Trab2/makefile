@@ -4,7 +4,7 @@ nomePrograma=main
 all: $(nomePrograma)
 
 $(nomePrograma): main.o utils.o trie.o dict.o consulta.o
-	gcc -o $(nomePrograma) main.o utils.o trie.o  dict.o $(parametrosCompilacao)
+	gcc -o $(nomePrograma) main.o utils.o trie.o  dict.o consulta.o $(parametrosCompilacao)
 	mkdir obj
 	mv *.o obj
 
