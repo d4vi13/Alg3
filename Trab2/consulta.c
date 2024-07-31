@@ -6,7 +6,23 @@
  * */
 
 static inline void LerUmaConsulta(FILE* src, char** word, int* dist){
+    char* line = malloc(MAX_WORD_SIZE * 2 * sizeof * word);
+    *word = malloc(MAX_WORD_SIZE * sizeof **word);
+    
+    if (!word)
+        return NULL;
+    
+    memset(word, 0, MAX_WORD_SIZE * sizeof * word);
+    
+    word = fgets(word, MAX_WORD_SIZE, *src);
+    if (!word)
+        return NULL;
 
+    word[strlen(word) - 1] = '\0';
+    
+
+    return  word; 
+     
 }
 
 /*
