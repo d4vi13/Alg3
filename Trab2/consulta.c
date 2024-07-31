@@ -1,12 +1,11 @@
 #include <string.h>
 #include "consulta.h"
 
-
 /*
  *  Ler do src uma linha e retornar a palavra para e distância de edição 
  * */
 
-void LerUmaConsulta(FILE* src, char** word, int* dist){
+void LerUmaConsulta(FILE** src, char** word, int* dist){
    	 
 	char *space, *line = malloc(MAX_WORD_SIZE * 2 * sizeof * word);
 	if(!line){
@@ -21,23 +20,22 @@ void LerUmaConsulta(FILE* src, char** word, int* dist){
 		return;
 	} 
     
-    memset(line, 0, 2*MAX_WORD_SIZE * sizeof * word);
-    memset(word, 0, MAX_WORD_SIZE * sizeof * word);
+    memset(line, 0, 2*MAX_WORD_SIZE * sizeof * line);
+    memset(*word, 0, MAX_WORD_SIZE * sizeof ** word);
     
-    line = fgets(word, MAX_WORD_SIZE, *src);
+    line = fgets(line, MAX_WORD_SIZE, *src);
     if (!line)
         return;
 
 	space = strchr(line, ' ');
 	*space = '\0';
 	
-	strcpy(word, line);
+	strcpy(*word, line);
 	
 	*dist = atoi(space+1);
 
 	free(line);
-	free(word);
-    return  word; 
+    return; 
      
 }
 
@@ -76,8 +74,8 @@ static inline void EscreverResultado(FILE* out, char* palavrasDaConsulta, int* V
 }
 
 
-void Consulta(FILE* in, FILE* out, PTRIE_TREE trie, PDICT dict){
 	/*
+void Consulta(FILE* in, FILE* out, PTRIE_TREE trie, PDICT dict){
     int chaves[20], max_dist ,lines = GetLineCount(in);
     char* word;
 
@@ -87,5 +85,5 @@ void Consulta(FILE* in, FILE* out, PTRIE_TREE trie, PDICT dict){
         ProcurarPalavrasComDistN(trie, word, max_dist, chaves);
         EscreverResultado(out, word, chaves);
     }
-	*/
 }
+	*/
