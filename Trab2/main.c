@@ -32,22 +32,6 @@ int main() {
     fclose(src);
     DismountDict(&dict);
     */
-
-    FILE* arq = fopen("entrada", "r");
-    if (arq == NULL) {
-        perror("Error opening file");
-        return 1;
-    }
-
-    char *word = NULL;
-    int dist = 0;
-
-    LerUmaConsulta(arq, &word, &dist);
-
-    printf("%s %d\n", word, dist);
-
-    fclose(arq);
-
     return 0;
 }
 
