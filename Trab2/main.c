@@ -32,6 +32,13 @@ int main() {
     fclose(src);
     DismountDict(&dict);
     */
+
+	
+
+	int a = DistanciaDeEdicao("hello", "llhe");
+
+	printf("%d\n", a);
+
     return 0;
 }
 

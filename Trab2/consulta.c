@@ -42,29 +42,37 @@ void LerUmaConsulta(FILE** src, char** word, int* dist){
 /*
  * Calcula a distancia de edicao entre a e b
  * */
-static inline void DistanciaDeEdicao(char * a, char* b){
-	int coluna, linha, coluna_atual, linha_atual;
+int DistanciaDeEdicao(char * a, char* b){
+	int coluna, linha, i, j;
 	coluna = strlen(a);
 	linha = strlen(b);
 
 	int distancias[coluna][linha];
 
-	for (coluna_atual = 0; coluna_atual <= coluna; ++coluna_atual) distancias[0][coluna_atual] = coluna_atual;
-	for (linha_atual = 0; linha_atual <= linha; ++linha_atual) distancias[linha_atual][0] = linha_atual;
+	for (i = 0; i <= coluna; ++i) distancias[0][i] = i;
+	for (j = 0; j <= linha; ++j) distancias[j][0] = j;
 
-	for (coluna_atual = 1; coluna_atual <= coluna; ++coluna_atual) {
-		for (linha_atual = 1; linha_atual <= linha; ++linha_atual) {
-			if (a[coluna_atual - 1] == b[linha_atuali - 1]) distancias[coluna_atual][linha_atual] = distancias[coluna_atual - 1][linha_atual - 1];
-			else distancias[coluna_atual][linha_atual] = (min(distancias[coluna_atual-1][linha_atual-1], min(distancias[coluna_atual-1][linha_atual],distancias[coluna_atual][linha_atual-1]))) + 1;
+	for (i = 1; i <= coluna; ++i) {
+		for (j = 1; j <= linha; ++j) {
+			if (a[i - 1] == b[j - 1]) distancias[i][j] = distancias[i - 1][j - 1];
+			else distancias[i][j] = (min(distancias[i-1][j-1], min(distancias[i-1][j],distancias[i][j-1]))) + 1;
 		}
 	}
-	return distancias[coluna_atual][linha_atual];
+	return distancias[coluna][linha];
 }
 
 /*
  * Passear na arvore até ter inserir 20 chaves no vetor ou ter acabado as palavras 
  * */
 static inline void ProcurarPalavarasComDistN(TRIE_TREE tree, char* word, int dist, int VetorDeChaves[20]){
+/*	int *todasAsChaves = malloc;
+	PassearNaTrieEPegarAsChaves(todasAsChaves);
+
+	iterar sobre todasAsChaves 
+		if Distancia de dict[chave] de word < dist
+			add to VetorDeChaves
+*/
+
 
 }
 

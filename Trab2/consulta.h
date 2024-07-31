@@ -5,6 +5,7 @@
 #include "trie/trie.h"
 #include "utils.h"
 
+int DistanciaDeEdicao(char * a, char* b);
 
 void LerUmaConsulta(FILE** src, char** word, int* dist);
 
