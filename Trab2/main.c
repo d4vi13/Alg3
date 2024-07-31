@@ -6,9 +6,13 @@
 
 static inline void MountTrieTree(PDICT dict, PTRIE_TREE tree){
     memset(tree, 0, sizeof * tree);
-
+	char *word;
     for (int i = 0; i < dict->MaxSize; i++){
-        InsertWord(tree, FetchWord(dict, i), i);
+        
+		word = FetchWord(dict, i);
+		if(word){
+			InsertWord(tree, FetchWord(dict, i), i);
+		}
     }
 }
 
@@ -27,7 +31,7 @@ int main() {
     printf("%s\n", FetchWord(&dict, key));
 
     fclose(src);
-    DismountDict(&dict);
+    //DismountDict(&dict);
 
 
 	int count, *a = malloc(1024*sizeof * a);
