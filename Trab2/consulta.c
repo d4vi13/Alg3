@@ -20,8 +20,8 @@ void LerUmaConsulta(FILE** src, char** word, int* dist){
 		return;
 	} 
     
-    memset(line, 0, 2*MAX_WORD_SIZE * sizeof * word);
-    memset(word, 0, MAX_WORD_SIZE * sizeof * word);
+    memset(line, 0, 2*MAX_WORD_SIZE * sizeof * line);
+    memset(*word, 0, MAX_WORD_SIZE * sizeof ** word);
     
     line = fgets(line, MAX_WORD_SIZE, *src);
     if (!line)
@@ -35,8 +35,7 @@ void LerUmaConsulta(FILE** src, char** word, int* dist){
 	*dist = atoi(space+1);
 
 	free(line);
-	free(word);
-    return  word; 
+    return; 
      
 }
 
@@ -60,8 +59,8 @@ static inline void EscreverResultado(FILE* out, char* palavrasDaConsulta, int* V
 }
 
 
-void Consulta(FILE* in, FILE* out, PTRIE_TREE trie, PDICT dict){
 	/*
+void Consulta(FILE* in, FILE* out, PTRIE_TREE trie, PDICT dict){
     int chaves[20], max_dist ,lines = GetLineCount(in);
     char* word;
 
@@ -71,5 +70,5 @@ void Consulta(FILE* in, FILE* out, PTRIE_TREE trie, PDICT dict){
         ProcurarPalavrasComDistN(trie, word, max_dist, chaves);
         EscreverResultado(out, word, chaves);
     }
-	*/
 }
+	*/
