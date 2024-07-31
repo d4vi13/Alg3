@@ -7,6 +7,7 @@
 #include <assert.h>
 
 #define MAX_WORD_SIZE 1024
+#define min(a, b) (a < b ? a : b)
 
 enum _bool{
     FALSE,

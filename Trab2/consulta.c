@@ -45,7 +45,22 @@ void LerUmaConsulta(FILE* src, char** word, int* dist){
  * Calcula a distancia de edicao entre a e b
  * */
 static inline void DistanciaDeEdicao(char * a, char* b){
+	int coluna, linha, coluna_atual, linha_atual;
+	coluna = strlen(a);
+	linha = strlen(b);
 
+	int distancias[coluna][linha];
+
+	for (coluna_atual = 0; coluna_atual <= coluna; ++coluna_atual) distancias[0][coluna_atual] = coluna_atual;
+	for (linha_atual = 0; linha_atual <= linha; ++linha_atual) distancias[linha_atual][0] = linha_atual;
+
+	for (coluna_atual = 1; coluna_atual <= coluna; ++coluna_atual) {
+		for (linha_atual = 1; linha_atual <= linha; ++linha_atual) {
+			if (a[coluna_atual - 1] == b[linha_atuali - 1]) distancias[coluna_atual][linha_atual] = distancias[coluna_atual - 1][linha_atual - 1];
+			else distancias[coluna_atual][linha_atual] = (min(distancias[coluna_atual-1][linha_atual-1], min(distancias[coluna_atual-1][linha_atual],distancias[coluna_atual][linha_atual-1]))) + 1;
+		}
+	}
+	return distancias[coluna_atual][linha_atual];
 }
 
 /*
