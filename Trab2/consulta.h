@@ -6,7 +6,7 @@
 #include "utils.h"
 
 
-void LerUmaConsulta(FILE* src, char** word, int* dist){
+void LerUmaConsulta(FILE** src, char** word, int* dist);
 
 //extern void Consulta(FILE* in, FILE* out, PTRIE_TREE trie, PDICT dict);
 

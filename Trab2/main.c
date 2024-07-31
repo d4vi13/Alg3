@@ -14,8 +14,8 @@ static inline void MountTrieTree(PDICT dict, PTRIE_TREE tree){
 }
 */
 
-int main(){
-	/*
+int main() {
+    /*
     DICT dict;
     TRIE_TREE tree;
     FILE* src = fopen("src", "r");
@@ -27,21 +27,27 @@ int main(){
 
     scanf("%d", &key);
 
-
     printf("%s\n", FetchWord(&dict, key));
 
     fclose(src);
-    DismountDict(&dict);*/
+    DismountDict(&dict);
+    */
 
-	FILE* arq = fopen("entrada", "r");
-	char *word;
-	int dist;
+    FILE* arq = fopen("entrada", "r");
+    if (arq == NULL) {
+        perror("Error opening file");
+        return 1;
+    }
 
-	//LerUmaConsulta(arq,&word,&dist);
+    char *word = NULL;
+    int dist = 0;
 
-	printf("%s %d\n", word, dist);
+    LerUmaConsulta(arq, &word, &dist);
 
-	fclose(arq);
+    printf("%s %d\n", word, dist);
 
-	return 0;
+    fclose(arq);
+
+    return 0;
 }
+
