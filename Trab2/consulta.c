@@ -69,17 +69,9 @@ void ProcurarPalavarasComDistN(PTRIE_TREE tree, PDICT dict, char* word, int dist
     int *keys = malloc(8192 * sizeof * keys);
 	int qtd_keys = 0, n = 0;
 
-/*	int *todasAsChaves = malloc;
-	PassearNaTrieEPegarAsChaves(todasAsChaves);
-
-	iterar sobre todasAsChaves 
-		if Distancia de dict[chave] de word < dist
-			add to VetorDeChaves
-*/
 	RetrieveAllKeys(tree, keys, &qtd_keys);
 	printf("%s:", word);
 	for (int i = 0; i < qtd_keys && i < 20 ; ++i) {
-        //printf("%d\n", DistanciaDeEdicao(word, dict->words[keys[i]]) );
 		if (DistanciaDeEdicao(word, dict->words[keys[i]]) <= dist) {
 			if (n != 0) {
 				printf(",");
@@ -88,23 +80,22 @@ void ProcurarPalavarasComDistN(PTRIE_TREE tree, PDICT dict, char* word, int dist
 			n = 1;
 		}		
 	}
+
 	printf("\n");
 
     free(keys);
 
 }
 
-
-// static inline void EscreverResultado(FILE* out, char* palavrasDaConsulta, int* VetorDeChaves){
-	
-// }
-
 void Consulta(FILE* in, PTRIE_TREE trie, PDICT dict){
     char* word;
 	int dist;
-	while (!feof(in)){
+
+    int tam = GetLineCount(in);
+	for(int i = 0; i < tam; i++){
 		LerUmaConsulta(&in, &word, &dist);
 		ProcurarPalavarasComDistN(trie, dict, word, dist);
+        free(word);
 	}
 	return;
 }
