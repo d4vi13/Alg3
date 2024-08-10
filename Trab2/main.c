@@ -4,15 +4,13 @@
 #include "consulta.h"
 #include <stdio.h>
 
-/*
 static inline void MountTrieTree(PDICT dict, PTRIE_TREE tree){
-    memset(tree, 0, sizeof * tree);
 
     for (int i = 0; i < dict->MaxSize; i++){
-        InsertWord(tree, FetchWord(dict, i), i);
+        if (FetchWord(dict, i))
+            InsertWord(tree, FetchWord(dict, i), i);
     }
 }
-*/
 
 int main() {
     /*
@@ -36,7 +34,10 @@ int main() {
     DICT dict;
     FILE *src = fopen("src", "r");
 
+    PTRIE_TREE tree = TrieAlloc();
+
     MountDict(src, &dict);
+    MountTrieTree(&dict, tree);
     KEY key;
 
     for (int i =0 ; i < dict.entryCount; i++){
@@ -45,11 +46,23 @@ int main() {
         }
     }
 
+    int a = 0, *b = malloc(1024*sizeof*b);
+
+    RetrieveAllKeys(tree, b, &a);
+
+    for (int i = 0; i < a; i++){
+        printf("%d %s\n", b[i], dict.unnormalized_words[b[i]]);
+    }
+
+    free(b);
+
+
     scanf("%d", &key);
 
     printf("%s\n", FetchWord(&dict, key));
 
     fclose(src);
+    TrieFree(tree);
     DismountDict(&dict);
 
 /* 
