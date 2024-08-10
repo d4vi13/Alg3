@@ -12,7 +12,25 @@ static inline void MountTrieTree(PDICT dict, PTRIE_TREE tree){
     }
 }
 
+
+static inline void createFile(){
+    char* e = malloc(MAX_WORD_SIZE*sizeof*e);
+    FILE* arq = fopen("src", "w");
+
+    while(scanf("%s", e) >= 0){
+        sprintf(e,"%s\n",e);
+        fputs(e,  arq);
+    }
+    
+    free(e);
+    fclose(arq);
+}
+
 int main() {
+
+    createFile();
+    
+
     /*
     DICT dict;
     TRIE_TREE tree;
@@ -55,11 +73,6 @@ int main() {
     }
 
     free(b);
-
-
-    scanf("%d", &key);
-
-    printf("%s\n", FetchWord(&dict, key));
 
     fclose(src);
     TrieFree(tree);
