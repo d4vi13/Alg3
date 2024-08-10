@@ -67,6 +67,8 @@ int main() {
     int a = 0, *b = malloc(1024*sizeof*b);
 
     RetrieveAllKeys(tree, b, &a);
+      
+    ProcurarPalavarasComDistN(tree, &dict, "davo",  3);
 
     for (int i = 0; i < a; i++){
         printf("%d %s\n", b[i], dict.unnormalized_words[b[i]]);
@@ -77,6 +79,9 @@ int main() {
     fclose(src);
     TrieFree(tree);
     DismountDict(&dict);
+
+
+    
 
 /* 
     PTRIE_TREE t  = TrieAlloc();	

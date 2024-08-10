@@ -48,7 +48,7 @@ int DistanciaDeEdicao(char * a, char* b){
 	coluna = strlen(a);
 	linha = strlen(b);
 
-	int distancias[coluna][linha];
+	int distancias[coluna+1][linha+1];
 
 	for (i = 0; i <= coluna; ++i) distancias[0][i] = i;
 	for (j = 0; j <= linha; ++j) distancias[j][0] = j;
@@ -65,7 +65,7 @@ int DistanciaDeEdicao(char * a, char* b){
 /*
  * Passear na arvore até ter inserir 20 chaves no vetor ou ter acabado as palavras 
  * */
-static inline void ProcurarPalavarasComDistN(PTRIE_TREE tree, PDICT dict, char* word, int dist){
+void ProcurarPalavarasComDistN(PTRIE_TREE tree, PDICT dict, char* word, int dist){
     int *keys = malloc(8192 * sizeof * keys);
 	int qtd_keys = 0;
 
@@ -77,8 +77,9 @@ static inline void ProcurarPalavarasComDistN(PTRIE_TREE tree, PDICT dict, char* 
 			add to VetorDeChaves
 */
 	RetrieveAllKeys(tree, keys, &qtd_keys);
-	for (int i = 0; i < qtd_keys; ++i) {
-		if (DistanciaDeEdicao(word, dict->unnormalized_words[keys[i]]) <= dist){
+	for (int i = 0; i < qtd_keys && i < 20 ; ++i) {
+        printf("%d\n", DistanciaDeEdicao(word, dict->words[keys[i]]) );
+		if (DistanciaDeEdicao(word, dict->words[keys[i]]) <= dist){
 			printf("%s\n", FetchWord(dict, keys[i]));
 		}
 	}
@@ -92,7 +93,7 @@ static inline void ProcurarPalavarasComDistN(PTRIE_TREE tree, PDICT dict, char* 
 	
 // }
 
-
+/*
 void Consulta(FILE* in, FILE* out, PTRIE_TREE trie, PDICT dict){
     int max_dist ,lines = GetLineCount(in);
     char* word;
@@ -103,3 +104,5 @@ void Consulta(FILE* in, FILE* out, PTRIE_TREE trie, PDICT dict){
         // EscreverResultado(out, word, chaves);
     }
 }
+
+*/
