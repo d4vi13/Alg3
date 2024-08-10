@@ -16,6 +16,6 @@ extern unsigned int GetLineCount(FILE* src);
 
 extern char* GetWord(FILE** src);
 
-extern char* GetNormalizedWord(FILE** src);
+extern char* GetNormalizedWord(FILE** src, char** copy);
 
 #endif
