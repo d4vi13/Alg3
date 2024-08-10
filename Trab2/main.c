@@ -60,7 +60,7 @@ int main() {
 
     for (int i =0 ; i < dict.entryCount; i++){
         if(dict.words[i]){
-            printf("%s %s\n", dict.words[i], dict.unnormalized_words[i]);
+            //printf("%s %s\n", dict.words[i], dict.unnormalized_words[i]);
         }
     }
 
@@ -68,10 +68,10 @@ int main() {
 
     RetrieveAllKeys(tree, b, &a);
       
-    ProcurarPalavarasComDistN(tree, &dict, "davo",  3);
+    ProcurarPalavarasComDistN(tree, &dict, "boiada",  3);
 
     for (int i = 0; i < a; i++){
-        printf("%d %s\n", b[i], dict.unnormalized_words[b[i]]);
+        //printf("%d %s\n", b[i], dict.unnormalized_words[b[i]]);
     }
 
     free(b);

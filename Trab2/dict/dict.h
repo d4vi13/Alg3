@@ -10,6 +10,7 @@
     RaiseEntryCount(dict);\
 }
 #define FetchWord(dict, key) (key < (dict)->MaxSize) ? ((dict)->words[key]) : (NULL)
+#define FetchUnWord(dict, key) (key < (dict)->MaxSize) ? ((dict)->unnormalized_words[key]) : (NULL)
 
 struct dict{
     char** words;

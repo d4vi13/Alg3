@@ -50,8 +50,8 @@ int DistanciaDeEdicao(char * a, char* b){
 
 	int distancias[coluna+1][linha+1];
 
-	for (i = 0; i <= coluna; ++i) distancias[0][i] = i;
-	for (j = 0; j <= linha; ++j) distancias[j][0] = j;
+	for (i = 0; i <= coluna; ++i) distancias[i][0] = i;
+	for (j = 0; j <= linha; ++j) distancias[0][j] = j;
 
 	for (i = 1; i <= coluna; ++i) {
 		for (j = 1; j <= linha; ++j) {
@@ -77,14 +77,14 @@ void ProcurarPalavarasComDistN(PTRIE_TREE tree, PDICT dict, char* word, int dist
 			add to VetorDeChaves
 */
 	RetrieveAllKeys(tree, keys, &qtd_keys);
-	printf("%s:\n", word);
+	printf("%s:", word);
 	for (int i = 0; i < qtd_keys && i < 20 ; ++i) {
         //printf("%d\n", DistanciaDeEdicao(word, dict->words[keys[i]]) );
 		if (DistanciaDeEdicao(word, dict->words[keys[i]]) <= dist) {
 			if (n != 0) {
 				printf(",");
 			}
-			printf("%s", FetchWord(dict, keys[i]));
+			printf("%s", FetchUnWord(dict, keys[i]));
 			n = 1;
 		}		
 	}
