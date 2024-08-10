@@ -32,7 +32,7 @@ void LerUmaConsulta(FILE** src, char** word, int* dist){
 	
 	strcpy(*word, line);
 	
-	*dist = atoi(space+1);
+*dist = atoi(space+1);
 
 	free(line);
     return; 

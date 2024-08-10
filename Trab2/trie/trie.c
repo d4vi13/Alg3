@@ -18,8 +18,6 @@ PTRIE_NODE TrieAlloc(){
 
     ZeroMemory(NewNode);
 
-	NewNode->key = -1;
-
     return NewNode;
 }
 
@@ -64,25 +62,6 @@ inline int RetrieveKey(PTRIE_TREE tree, char* word){
 
     
     return node->key;
-}
-
-void RetrieveAllKeys(PTRIE_TREE tree, int** keys, int* count){
-	printf("hi\n");
-	if(tree->key >= 0){
-		printf("alo ");
-		*keys[*count] = tree->key;
-		*count++;
-		return;	
-	}
-
-	for (int i = 0; i < ALPH_LEN; i++){
-		printf("oi\n");
-		if (tree->letters[i])
-			RetrieveAllKeys(tree->letters[i],keys,count);
-	}
-
-	return;
-
 }
 
 void TrieFree(PTRIE_TREE tree){
