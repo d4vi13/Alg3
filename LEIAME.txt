@@ -1,0 +1,24 @@
+Detalhes do trabalho interessante:
+
+		O uso da Árvore Trie junto com Dicionário é curioso
+	devido o tamanho do alfabeto ser consideravelmente pequena
+	assim, o custo da busca na Trie é relativamente rápido, o
+	que é de nosso interesse, pois é muito mais rápido buscar
+	em uma Trie e com a chave devolvida, ler a posição na qual
+	está armazenado as informações da chave no Dicionário do
+	que percorrer o Dicionário comparando da primeira palavra
+	até a de interesse.
+		A função de achar a distância de edição é interessante 
+	devido a utilização de matriz para armazenar as distâncias
+	ao percorrer comparando as duas palavras (consulta e do
+	dicionario), ou seja, para cada letra da palavra tem sua
+	respectiva distância comparada com a outra e a função 
+	devolve uma valor final que indica a distância de edição.
+
+Dificuldades e Bugs na implementação:
+		O difícil do trabalho foi a implementação da função de
+	achar a distância de edição, ou melhor, de que forma posso
+	achar as distância de forma que funciona para todas palavras
+	passadas como parâmetro.
+		Os bugs mais frequentes desse trabalho foi Segmentation
+	Fault e falta de liberação de memória.
