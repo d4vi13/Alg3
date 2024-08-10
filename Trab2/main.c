@@ -42,9 +42,19 @@ int main() {
     InsertWord(t, "banco", 4);
     
     
-    int a = RetrieveKey(t, "banana");
-    printf("%d\n", a);
+    int c = RetrieveKey(t, "banana");
+    printf("ou : %d\n", c);
 
+
+    int a = 0, *b = malloc(1024*sizeof*b);
+
+    RetrieveAllKeys(t, b, &a);
+
+    for (int i = 0; i < a; i++){
+        printf("%d\n", b[i]);
+    }
+
+    free(b);
 
     TrieFree(t);
     return 0;

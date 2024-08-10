@@ -30,4 +30,6 @@ extern int RetrieveKey(PTRIE_TREE tree, char* word);
 
 extern void TrieFree(PTRIE_TREE tree);
 
+void RetrieveAllKeys(PTRIE_TREE t, int* keys, int *count);
+
 #endif

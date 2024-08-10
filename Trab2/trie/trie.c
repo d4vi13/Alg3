@@ -17,7 +17,9 @@ PTRIE_NODE TrieAlloc(){
         return NULL;
 
     ZeroMemory(NewNode);
-
+    
+    NewNode->key = -1;
+    
     return NewNode;
 }
 
@@ -32,6 +34,7 @@ static inline BOOL TrieInsert(PTRIE_NODE node, char letter){
 
         LetterNode(node, letter)= new;
     }
+    
 
     return TRUE;
 }
@@ -54,14 +57,34 @@ void InsertWord(PTRIE_TREE tree, char* word, int key){
 inline int RetrieveKey(PTRIE_TREE tree, char* word){
     PTRIE_NODE node = tree;
     int i;
-    for (i = 0; i < strlen(word); i++){
+    for (i = 0; i < strlen(word) ; i++){
         if (!LetterNode(node, word[i]))
             return 0;
         node =  LetterNode(node,word[i]);
+        //printLetterArray(node);
+        //printf("%d\n", node->key);
     }
 
     
     return node->key;
+}
+
+void RetrieveAllKeys(PTRIE_TREE t, int* keys, int *count){
+
+    PTRIE_NODE p = t; 
+
+    if (t->key >= 0 ){
+        keys[*count] = t->key; 
+        (*count)++;
+    }
+
+    for(int i = 0; i < ALPH_LEN; i++){
+        if (p->letters[i])
+            RetrieveAllKeys(p->letters[i], keys, count);
+    }
+
+    return;	
+
 }
 
 void TrieFree(PTRIE_TREE tree){
