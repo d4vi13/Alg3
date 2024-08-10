@@ -65,14 +65,16 @@ int DistanciaDeEdicao(char * a, char* b){
  * Passear na arvore até ter inserir 20 chaves no vetor ou ter acabado as palavras 
  * */
 static inline void ProcurarPalavarasComDistN(TRIE_TREE tree, char* word, int dist, int VetorDeChaves[20]){
-/*	int *todasAsChaves = malloc;
+    int *keys = malloc(8192 * sizeof * keys);
+
+    /*	int *todasAsChaves = malloc;
 	PassearNaTrieEPegarAsChaves(todasAsChaves);
 
 	iterar sobre todasAsChaves 
 		if Distancia de dict[chave] de word < dist
 			add to VetorDeChaves
 */
-
+    free(keys);
 
 }
 

@@ -13,7 +13,9 @@
 
 struct dict{
     char** words;
-    
+    char** unnormalized_words;
+
+
     char nullword[10];
 
     unsigned int entryCount;
