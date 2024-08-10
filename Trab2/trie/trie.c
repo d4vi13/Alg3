@@ -4,7 +4,7 @@
 void printLetterArray(PTRIE_NODE node){
 
     for (int i = 0; i < ALPH_LEN; i++){
-        printf("%d ", node->letters[i] == NULL);
+        printf("%d ", node->letters[i] != NULL);
     }
     printf("\n");
 }

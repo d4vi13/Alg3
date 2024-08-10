@@ -33,12 +33,20 @@ int main() {
     DismountDict(&dict);
     */
 
-	
+    PTRIE_TREE t  = TrieAlloc();	
 
-	int a = DistanciaDeEdicao("hello", "llhe");
+    InsertWord(t, "davi", 1);
+    InsertWord(t, "banana", 2);
+    InsertWord(t, "bananas", 8);
+    InsertWord(t, "fusca", 3);
+    InsertWord(t, "banco", 4);
+    
+    
+    int a = RetrieveKey(t, "banana");
+    printf("%d\n", a);
 
-	printf("%d\n", a);
 
+    TrieFree(t);
     return 0;
 }
 
