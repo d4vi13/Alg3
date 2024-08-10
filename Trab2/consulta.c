@@ -99,16 +99,12 @@ void ProcurarPalavarasComDistN(PTRIE_TREE tree, PDICT dict, char* word, int dist
 	
 // }
 
-/*
-void Consulta(FILE* in, FILE* out, PTRIE_TREE trie, PDICT dict){
-    int max_dist ,lines = GetLineCount(in);
+void Consulta(FILE* in, PTRIE_TREE trie, PDICT dict){
     char* word;
-
-    for(int i = 0; i < lines; i++){
-        LerUmaConsulta(out, &word, &max_dist);
-        ProcurarPalavrasComDistN(trie, dict, word, max_dist);
-        // EscreverResultado(out, word, chaves);
-    }
+	int dist;
+	while (!feof(in)){
+		LerUmaConsulta(&in, &word, &dist);
+		ProcurarPalavarasComDistN(trie, dict, word, dist);
+	}
+	return;
 }
-
-*/
