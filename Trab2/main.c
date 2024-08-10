@@ -33,6 +33,26 @@ int main() {
     DismountDict(&dict);
     */
 
+    DICT dict;
+    FILE *src = fopen("src", "r");
+
+    MountDict(src, &dict);
+    KEY key;
+
+    for (int i =0 ; i < dict.entryCount; i++){
+        if(dict.words[i]){
+            printf("%s %s\n", dict.words[i], dict.unnormalized_words[i]);
+        }
+    }
+
+    scanf("%d", &key);
+
+    printf("%s\n", FetchWord(&dict, key));
+
+    fclose(src);
+    DismountDict(&dict);
+
+/* 
     PTRIE_TREE t  = TrieAlloc();	
 
     InsertWord(t, "davi", 1);
@@ -56,7 +76,7 @@ int main() {
 
     free(b);
 
-    TrieFree(t);
+    TrieFree(t); */
     return 0;
 }
 
