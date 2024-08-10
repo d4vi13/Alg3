@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "../common.h"
+#include "common.h"
 
 #define ZeroMemory(mem) memset(mem, 0, sizeof * mem)
 #define LetterIndex(letter) letter - 'a'

@@ -1,6 +1,6 @@
 #include "dict.h"
 #include <string.h>
-#include "../utils.h"
+#include "utils.h"
 
 static inline BOOL DictInit(FILE* src, PDICT dict){
     memset(dict, 0, sizeof * dict);

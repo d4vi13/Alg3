@@ -2,9 +2,9 @@
 #define CONSULTA_H
 
 #include "common.h"
-#include "trie/trie.h"
+#include "trie.h"
 #include "utils.h"
-#include "dict/dict.h"
+#include "dict.h"
 
 int DistanciaDeEdicao(char * a, char* b);
 

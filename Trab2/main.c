@@ -1,6 +1,6 @@
 #include "common.h"
-#include "dict/dict.h"
-#include "trie/trie.h"
+#include "dict.h"
+#include "trie.h"
 #include "consulta.h"
 #include <stdio.h>
 

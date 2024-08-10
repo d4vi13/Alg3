@@ -1,6 +1,6 @@
 #include <string.h>
 #include "consulta.h"
-#include "dict/dict.h"
+#include "dict.h"
 
 /*
  *  Ler do src uma linha e retornar a palavra para e distância de edição 

@@ -1,7 +1,7 @@
 #ifndef DICT_H
 #define DICT_H
 
-#include "../common.h"
+#include "common.h"
 
 #define CommitEntry(dict, word) dict->words[dict->entryCount] = word
 #define RaiseEntryCount(dict) dict->entryCount += 1

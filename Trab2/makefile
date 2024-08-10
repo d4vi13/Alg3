@@ -9,11 +9,11 @@ $(nomePrograma): main.o utils.o trie.o dict.o consulta.o
 utils.o: utils.h utils.c
 	gcc -c utils.c $(parametrosCompilacao)
 
-trie.o: trie/trie.h trie/trie.c
-	gcc -c trie/trie.c $(parametrosCompilacao)
+trie.o: trie.h trie.c
+	gcc -c trie.c $(parametrosCompilacao)
 
-dict.o: dict/dict.h dict/dict.c
-	gcc -c dict/dict.c $(parametrosCompilacao)
+dict.o: dict.h dict.c
+	gcc -c dict.c $(parametrosCompilacao)
 
 consulta.o: consulta.h consulta.c
 	gcc -c consulta.c $(parametrosCompilacao)
