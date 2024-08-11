@@ -1,0 +1,15 @@
+adriatico 2
+alberta 3
+aberta 2
+boiada 2
+boiada 3
+calma 0
+casta 2
+casta 3
+aaaaa 3
+aaaaaa 0
+aaaaaa 1
+aaaaaa 2
+aaaaaa 3
+teste 20
+ciume 2
