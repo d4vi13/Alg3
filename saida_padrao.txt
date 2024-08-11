@@ -1,0 +1,15 @@
+adriatico:adriatico
+alberta:Alberta,Albertina
+aberta:Alberta
+boiada:boiaras
+boiada:boiaras,boiardes,boiarei,boiarem
+calma:calma
+casta:calma,carma,casta
+casta:Alasca,cabal,calma,carma,casta,citar
+aaaaa:Alasca,cabal,calma,carma,casta
+aaaaaa:
+aaaaaa:
+aaaaaa:
+aaaaaa:Alasca
+teste:a,adriatico,adroaldo,afeganistao,Alasca,Alberta,Albertina,boiaras,boiardes,boiarei,boiareis,boiarem,boiaremo,c,cabal,calma,carma,casta,citar,claro
+ciume:
