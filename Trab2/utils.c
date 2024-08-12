@@ -1,8 +1,23 @@
 #include "utils.h"
 #include <string.h>
 
+struct dupla_char{
+    char code;
+    char sem_acento;
+};
 
+typedef struct dupla_char dupla_char;
 
+dupla_char conversao[] = {
+    {80, 'a'},
+    {81, 'a'},
+    {82, 'a'},
+    {83, 'a'},
+    {84, 'a'},
+    {85, 'a'},
+    {88, 'e'},
+    {89, 'e'}
+};
 
 
 BOOL newNormalizeWord(unsigned char* word){
