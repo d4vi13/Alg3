@@ -10,7 +10,17 @@ aaaaa 3
 aaaaaa 0
 aaaaaa 1
 aaaaaa 2
+
+
 aaaaaa 3
 teste 20
 ciume 2
+ciúme 2
 $#$ 3
+
+
+
+
+
+
+

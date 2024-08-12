@@ -69,16 +69,17 @@ int DistanciaDeEdicao(char * a, char* b){
  * */
 void ProcurarPalavarasComDistN(PTRIE_TREE tree, PDICT dict, char* word, int dist){
     int *keys = malloc(8192 * sizeof * keys);
-	int qtd_keys = 0, n = 0;
+	int qtd_keys = 0, n = 0, j = 0;
 
 	RetrieveAllKeys(tree, keys, &qtd_keys);
-	for (int i = 0; i < qtd_keys && i < 20 ; ++i) {
+	for (int i = 0; i < qtd_keys && j < 20 ; ++i) {
 		if (DistanciaDeEdicao(word, dict->words[keys[i]]) <= dist) {
 			if (n != 0) {
 				printf(",");
 			}
 			printf("%s", FetchUnWord(dict, keys[i]));
 			n = 1;
+			j++;
 		}		
 	}
 

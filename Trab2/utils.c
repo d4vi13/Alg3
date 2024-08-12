@@ -65,15 +65,16 @@ dupla_char conversao[] = {
 BOOL normalizeWord(unsigned char* word){
     BOOL result = TRUE;
     char c;
-    int i;
+    int i, k = 0;
 
     char *newword = malloc(MAX_WORD_SIZE * sizeof * newword);
     if(!newword)
         return FALSE;
+    memset(newword, 0, MAX_WORD_SIZE * sizeof * newword);
 
     for (i =0 ; i < strlen(word); i++){
         c = word[i];
-        if (c == 0xc3){
+        if (c == 0xffffffc3){
             i++;
             c = word[i]; 
             for (int j = 0; j < CONVERSION_TABLE_SIZE; j++){
@@ -89,13 +90,15 @@ BOOL normalizeWord(unsigned char* word){
                 c = LowerCase(c);
         }
 
-        newword[i] = c;
+        newword[k] = c;
+        k++;
     }
 
     newword[i+1] = '\0';
 
     strcpy(word, newword);
     free(newword);
+    //printf("%s\n", word);
 
     return result;
 } 
