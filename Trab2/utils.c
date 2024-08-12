@@ -62,7 +62,7 @@ dupla_char conversao[] = {
 };
 
 
-BOOL newNormalizeWord(unsigned char* word){
+BOOL normalizeWord(unsigned char* word){
     BOOL result = TRUE;
     char c;
     int i;
@@ -80,6 +80,13 @@ BOOL newNormalizeWord(unsigned char* word){
                 if (conversao[j].code == c)
                     c = conversao[j].sem_acento;
             }
+        }else{
+            if(IsSpecialCaracter(word[i])){
+                result = 0;
+            }
+
+            if (IsUpperCase(c))
+                c = LowerCase(c);
         }
 
         newword[i] = c;
@@ -90,10 +97,11 @@ BOOL newNormalizeWord(unsigned char* word){
     strcpy(word, newword);
     free(newword);
 
+    return result;
 } 
 
 
-BOOL normalizeWord(unsigned char* word){
+BOOL oldnormalizeWord(unsigned char* word){
     BOOL result = TRUE;
 
     for(int i = 0; i < strlen(word); i++){
