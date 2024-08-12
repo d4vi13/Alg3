@@ -1,6 +1,10 @@
 #include "utils.h"
 #include <string.h>
 
+
+
+
+
 BOOL newNormalizeWord(unsigned char* word){
     BOOL result = TRUE;
     
