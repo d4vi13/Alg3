@@ -5,9 +5,9 @@ BOOL normalizeWord(unsigned char* word){
     BOOL result = TRUE;
 
     for(int i = 0; i < strlen(word); i++){
-
+        
         if(IsSpecialCaracter(word[i])){
-            result = FALSE;
+            result = 0;
         }
 
         if (IsUpperCase(word[i]))
@@ -48,6 +48,22 @@ char* GetWord(FILE** src){
 
     return  word;
 }
+
+char* Normalized(char **word, char** copy){
+
+    if(!*word)
+        return NULL;
+
+    strcpy(*copy, *word);
+
+    if (!normalizeWord(*word)){
+        free(*word);
+        *word = NULL;
+    }
+
+    return *word;
+}
+
 
 char* GetNormalizedWord(FILE** src, char** copy){
 
