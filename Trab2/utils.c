@@ -22,14 +22,31 @@ dupla_char conversao[] = {
 
 BOOL newNormalizeWord(unsigned char* word){
     BOOL result = TRUE;
-    
-    char *newword = malloc(MAX_WORD_SIZE*sizeof*newword);
+    char c;
+    int i;
+
+    char *newword = malloc(MAX_WORD_SIZE * sizeof * newword);
     if(!newword)
         return FALSE;
 
-    for (int i =0 ; i < strlen(word); i++){
+    for (i =0 ; i < strlen(word); i++){
+        c = word[i];
+        if (c == 0xc3){
+            i++;
+            c = word[i]; 
+            for (int j = 0; j < CONVERSION_TABLE_SIZE; j++){
+                if (conversao[j].code == c)
+                    c = conversao.sem_acento;
+            }
+        }
 
+        newword[i] = c;
     }
+
+    newword[i+1] = '\0';
+
+    strcpy(word, newword);
+    free(newword);
 
 } 
 
