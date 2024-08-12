@@ -39,7 +39,7 @@ int main() {
     MountTrieTree(&dict, tree);
 
 
-    FILE *arq = fopen("consulta.txt", "r");
+    FILE *arq = fopen("consultas.txt", "r");
     Consulta(arq, tree, &dict);
     fclose(arq);
 

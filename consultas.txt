@@ -13,3 +13,4 @@ aaaaaa 2
 aaaaaa 3
 teste 20
 ciume 2
+$#$ 3
