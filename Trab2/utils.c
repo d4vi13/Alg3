@@ -1,6 +1,20 @@
 #include "utils.h"
 #include <string.h>
 
+BOOL newNormalizeWord(unsigned char* word){
+    BOOL result = TRUE;
+    
+    char *newword = malloc(MAX_WORD_SIZE*sizeof*newword);
+    if(!newword)
+        return FALSE;
+
+    for (int i =0 ; i < strlen(word); i++){
+
+    }
+
+} 
+
+
 BOOL normalizeWord(unsigned char* word){
     BOOL result = TRUE;
 
