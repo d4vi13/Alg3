@@ -9,14 +9,56 @@ struct dupla_char{
 typedef struct dupla_char dupla_char;
 
 dupla_char conversao[] = {
-    {80, 'a'},
-    {81, 'a'},
-    {82, 'a'},
-    {83, 'a'},
-    {84, 'a'},
-    {85, 'a'},
-    {88, 'e'},
-    {89, 'e'}
+    {0x80, 'a'},
+    {0x81, 'a'},
+    {0x82, 'a'},
+    {0x83, 'a'},
+    {0x84, 'a'},
+    {0x85, 'a'},
+    {0x86, 'a'},
+    {0x87, 'c'},
+    {0x88, 'e'},
+    {0x89, 'e'},
+    {0x8a, 'e'},
+    {0x8b, 'e'},
+    {0x8c, 'i'},
+    {0x8d, 'i'},
+    {0x8e, 'i'},
+    {0x8f, 'i'},
+    {0x92, 'o'},
+    {0x93, 'o'},
+    {0x94, 'o'},
+    {0x95, 'o'},
+    {0x96, 'o'},
+    {0x99, 'u'},
+    {0x9a, 'u'},
+    {0x9b, 'u'},
+    {0x9c, 'u'},
+    {0xa0, 'a'},
+    {0xa1, 'a'},
+    {0xa2, 'a'},
+    {0xa3, 'a'},
+    {0xa4, 'a'},
+    {0xa5, 'a'},
+    {0xa6, 'a'},
+    {0xa7, 'c'},
+    {0xa8, 'e'},
+    {0xa9, 'e'},
+    {0xaa, 'e'},
+    {0xab, 'e'},
+    {0xac, 'i'},
+    {0xad, 'i'},
+    {0xae, 'i'},
+    {0xaf, 'i'},
+    {0xb2, 'o'},
+    {0xb3, 'o'},
+    {0xb4, 'o'},
+    {0xb5, 'o'},
+    {0xb6, 'o'},
+    {0xb9, 'o'},
+    {0xba, 'u'},
+    {0xbb, 'u'},
+    {0xbc, 'u'}
 };
 
 
@@ -36,7 +78,7 @@ BOOL newNormalizeWord(unsigned char* word){
             c = word[i]; 
             for (int j = 0; j < CONVERSION_TABLE_SIZE; j++){
                 if (conversao[j].code == c)
-                    c = conversao.sem_acento;
+                    c = conversao[j].sem_acento;
             }
         }
 
